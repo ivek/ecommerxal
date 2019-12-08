@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.models import User
+from .form import RegisterForm
 # Create your views here.
 
 
@@ -23,3 +25,27 @@ def login_user(request):
             messages.error(request, 'Usuario o contraseña no valido')
 
     return render(request, 'users/login.html')
+
+
+def logout_user(request):
+    logout(request)
+    messages.success(request, 'Sesión finalizada')
+    return redirect('login')
+
+
+def register_user(request):
+    form = RegisterForm(request.POST or None)
+    if request.method == 'POST' and form.is_valid():
+        username = form.cleaned_data.get('username')
+        email = form.cleaned_data.get('email')
+        password = form.cleaned_data.get('password')
+        new_user = User.objects.create_user(username, email, password)
+
+        if new_user:
+            login(request, new_user)
+            messages.success(request, 'Usuario creado exitosamente')
+            return redirect('users_add')
+
+    return render(request, 'users/register.html', {'form': form
+
+                                                   })
