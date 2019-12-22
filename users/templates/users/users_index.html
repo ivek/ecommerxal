@@ -2,5 +2,34 @@
 {%load static%}
 {% block content %}
     <title>ecommerce Xalapa</title>
-     
+       <div class="col">   
+          <!--formulario-->
+          <form method="POST">
+            {% csrf_token %}
+            <div class="form_group">
+             <h2>{{message}}</h2>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th> {{title}}</th>
+                            <th>Precio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                     {%for field in object_list%} 
+                        <tr>
+                            <td>{{field.title}}</td>
+                      
+                            <td> {{field.price}} </td>
+                        </tr>
+                      {%endfor%}
+                    </tbody>
+                </table>
+            </div>
+          
+          </form>
+      </div> 
+
+
+
 {%endblock content%}

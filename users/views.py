@@ -3,11 +3,14 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from .form import RegisterForm
+from products.models import Product
 # Create your views here.
 
 
 def user_add(request):
-    return render(request, 'users/users_index.html', {'message': 'prueba desde views'})
+    products=Product.objects.all()
+    return render(request, 'users/users_index.html', {'message':'Listado de productos', 
+    'title':'Productos', 'products':products})
 
 
 def login_user(request):
