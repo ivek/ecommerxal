@@ -1,0 +1,10 @@
+<div class="card h-100">
+    {%if field.image%}
+        <img src="{{field.image.url}}" alt="Imagen del producto" height=300>
+    {%endif%}  
+    <div class="card-body">
+        <h5 class="card-title">{{field.title}}</h5>
+        <p class="card-text">{{field.description}}</p>
+        <a href class="btn btn-primary">ver más</a> 
+    </div>
+</div>
