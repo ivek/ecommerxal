@@ -8,9 +8,8 @@ from products.models import Product
 
 
 def user_add(request):
-    products=Product.objects.all()
-    return render(request, 'users/users_index.html', {'message':'Listado de productos', 
-    'title':'Productos', 'products':products})
+ 
+    return render(request, 'index.html')
 
 
 def login_user(request):
