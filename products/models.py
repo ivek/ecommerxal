@@ -7,6 +7,7 @@ import uuid
 class Product(models.Model):
     title= models.CharField(max_length=50)
     description= models.TextField()
+    image = models.ImageField(upload_to="products/", null=False, blank=False)
     slug = models.SlugField(null=False, blank=False, unique=True)
     price = models.DecimalField(max_digits=8, decimal_places=2, default=0.0)
     create_at= models.DateTimeField(auto_now=True)
