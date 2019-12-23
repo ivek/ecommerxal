@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'users',
     'products',
     'categories',
+    'clients',
+    'carts',
 ]
 
 MIDDLEWARE = [
@@ -53,6 +55,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'ecommerxal.urls'
+
+AUTH_USER_MODEL = "clients.User"
 
 TEMPLATES = [
     {

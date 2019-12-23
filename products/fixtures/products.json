@@ -1,0 +1,26 @@
+[
+{
+    "model": "products.product",
+    "pk": 1,
+    "fields": {
+        "title": "Sentra",
+        "description": "blanco modelo reciente",
+        "image": "products/sentra.png",
+        "slug": "sentra",
+        "price": "200000.00",
+        "create_at": "2019-12-22T04:21:26.477Z"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 2,
+    "fields": {
+        "title": "Pointer",
+        "description": "negro \r\ntres puertas\r\n1998",
+        "image": "products/pointer.jpg",
+        "slug": "pointer",
+        "price": "40000.00",
+        "create_at": "2019-12-22T05:08:28.943Z"
+    }
+}
+]

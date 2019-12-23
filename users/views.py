@@ -4,6 +4,8 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from .form import RegisterForm
 from products.models import Product
+from clients.models import User
+
 # Create your views here.
 
 
